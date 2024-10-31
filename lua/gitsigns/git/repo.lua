@@ -141,6 +141,9 @@ function M.get(dir, gitdir, toplevel)
   end
 
   gitdir = info.gitdir
+  if not gitdir then
+    return
+  end
   if not repo_cache[gitdir] then
     repo_cache[gitdir] = {1, new(info)}
   else
